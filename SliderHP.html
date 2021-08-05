@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider Homepage</title>
+    <link rel="stylesheet" href="slider.css" />
+    <script
+      src="https://kit.fontawesome.com/e3565007b7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Logo</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Donate</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <img class="homeimg active" src="islands.jpg" alt="snowimg" />
+      <img class="homeimg" src="camping.jpg" alt="snowimg" />
+      <img class="homeimg" src="Offroad.jpg" alt="snowimg" />
+      <img
+        class="homeimg"
+        src="pexels-brett-sayles-2097628 (1).jpg"
+        alt="snowimg"
+      />
+
+      <div class="content active">
+        <h1>Slide.<br /><span>1</span></h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed optio
+          dolores quam numquam eius qui eum animi exercitationem aperiam tenetur
+          veniam hic asperiores aut est nam, incidunt, sunt iusto impedit.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Slide.<br /><span>2</span></h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed optio
+          dolores quam numquam eius qui eum animi exercitationem aperiam tenetur
+          veniam hic asperiores aut est nam, incidunt, sunt iusto impedit.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Slide.<br /><span>3</span></h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed optio
+          dolores quam numquam eius qui eum animi exercitationem aperiam tenetur
+          veniam hic asperiores aut est nam, incidunt, sunt iusto impedit.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Slide.<br /><span>4</span></h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed optio
+          dolores quam numquam eius qui eum animi exercitationem aperiam tenetur
+          veniam hic asperiores aut est nam, incidunt, sunt iusto impedit.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"> <i class="fab fa-facebook-f"></i></a>
+        <a href="#"> <i class="fab fa-instagram"></i></a>
+        <a href="#"> <i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      //Javascript of menu-btn
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      //Javascript for img slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".homeimg");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      };
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>
